@@ -1,4 +1,4 @@
-var domain='http://localhost:3000/';
+var domain='http://energipro.id:3000/';
 var server= domain+'mobile';
 
 
