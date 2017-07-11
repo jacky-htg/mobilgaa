@@ -1,0 +1,150 @@
+.page h1,.page h2,.page h3,.page h4,.page h5,.page h6,.page p,.page a{
+	text-transform: none !important;
+}
+
+.img-show{
+	width: 100%;
+}
+.img-show img{
+	width: 100%;
+}
+.text-center{
+	text-align: center;
+}
+
+.comment-time{
+	position: absolute;
+	right: 10px;
+	z-index: 99999;
+}
+
+.schedule-text{
+	text-transform: capitalize;
+	font-size: 11px;
+}
+
+.schedul .button-next{
+	float: right;
+}
+
+.dot-dot{
+	text-align: center;
+}
+
+.complaint-view{
+	float: left;
+}
+
+
+
+.complaint-box .circle-img{
+/*	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 70px;
+	height: 70px;*/
+	position: relative;
+	width: calc(100% - 20px);
+	height: auto;
+	margin:10px;
+	border-radius: 100%;
+}
+
+.complaint-box .col-25{
+	position: relative;
+	min-height: 80px;
+}
+.complaint-box .col-75{
+	padding: 10px 0;
+}
+
+.complaint-box .col-75 b, .complaint-box .col-75 p{
+	margin: 0;
+}
+.complaint-box .col-75 p{
+	font-size: 11px;
+}
+
+.complaint-box .col-75 b{
+	font-size: 12px;
+}
+
+.complaint-box .status{
+	position: absolute; right:0px; top:10px;
+	width: 100px;
+	height: 90px;
+
+}
+
+.complaint-box .status b{
+	float: right;
+	margin-right: 22px;
+	font-size: 11px;
+	margin-top: 14px;
+}
+
+.complaint-box .status .hold{
+	border-radius: 20px;
+	padding: 1px;
+	font-size: 8px;
+	color: #f6e081;
+	text-align: center;
+	border: 1px solid #f6e081;
+	margin-right: 10px;
+}
+
+.status-bar p{
+	text-align: center;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.schedul{
+	float: left;
+	width: 100%;
+}
+
+.schedul #done{
+	float: right;
+}
+
+.schedul .month{
+	text-align: center;
+	border:0.5px solid #bfbebe;
+	float: left;
+	padding: 5px 0;
+	font-size: 9px;
+}
+
+.schedul .status{
+	font-size: 9px;
+}
+
+.schedul .status#on_pro{
+	text-align: center;
+}
+
+.schedul .status#done{
+	text-align: right;
+}
+
+
+.box-task{
+	background: #f1f1f1;
+	height: 20px;
+}
+
+.box-task .box-status{
+	background: #222;
+	height: 20px;
+}
+#looping-subtask div{
+	text-transform: none;
+}
+.subtask{
+	border-bottom:1px solid #908d8d;
+}

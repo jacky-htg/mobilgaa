@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- add -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+    <!-- /add -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="entitas/framework7/css/framework7.material.css">
+    <link rel="stylesheet" type="text/css" href="entitas/framework7/css/framework7.material.colors.css">
+    <link rel="stylesheet" type="text/css" href="entitas/framework7/css/material-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/kitchen-sink.css">
+    <link rel="stylesheet" type="text/css" href="/entitas/app/index.css">
+
+
+    <title>Gaa Project</title>
+</head>
+
+
+
+<body class="theme-black">
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+
+    <div class="panel panel-left panel-reveal">
+        <div class="view navbar-fixed" id="panel-left" >
+            <div class="pages">
+                <div  class="page">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="views tabs">
+
+        <div id="view-home" class="view tab view-main active ">
+            <div class="pages navbar-fixed ">
+                <div class="page">
+
+                </div>
+            </div>
+        </div>
+        <div  id="view-notification" class="view tab ">
+            <div class="pages navbar-fixed ">
+                <div class="page">
+
+                </div>
+            </div>
+
+        </div>
+        <div id="view-profile" class="view tab  ">
+            <div class="pages navbar-fixed ">
+                <div class="page">
+
+                </div>
+            </div>
+
+        </div>
+        <div id="view-option" class="view tab ">
+            <div class="pages navbar-fixed ">
+                <div class="page">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="toolbar toolbar-bottom  tabbar navigation-main   white " style="background: #fff;">
+            <div class="toolbar-inner">
+                <a href="#view-home" class="tab-link active"><li class="material-icons">home</li></a>
+                <a href="#view-notification" class="tab-link "><li class="material-icons">notifications</li></a>
+                <a href="#view-profile" class="tab-link "><li class="material-icons">account_circle</li></a>
+                <a href="#view-option" class="tab-link "><li class="material-icons">more_horiz</li></a>
+
+            </div>
+
+        </div>
+        
+    </div>
+        
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- <script type="text/javascript" src="js/index.js"></script> -->
+    <!-- <script type="text/javascript">
+        app.initialize();
+    </script> -->
+    <script type="text/javascript" src="js/navigation_data.js"></script>
+    <script type="text/javascript" src='entitas/jquery/jquery2.js'></script>
+    <script type="text/javascript" src='entitas/notify/notify.js'></script>
+    <script type="text/javascript" src="entitas/framework7/js/framework7.js"></script>
+    <script type="text/javascript" src="js/build.js"></script>
+    <script type="text/javascript" src="js/functionity.js"></script>
+    <script type="text/javascript" src="js/page-control.js"></script>
+
+    <!-- controlling page -->
+    <script type="text/javascript" src="controller/home-index.js"></script>
+    <script type="text/javascript" src="controller/all-project.js"></script>
+    <script type="text/javascript" src="controller/detail-project.js"></script>
+    <script type="text/javascript" src="controller/panel-design.js"></script>
+    <script type="text/javascript" src="controller/panel-time-schedule.js"></script>
+    <script type="text/javascript" src="controller/panel-budget.js"></script>
+    <script type="text/javascript" src="controller/panel-people.js"></script>
+    <script type="text/javascript" src="controller/panel-complaint.js"></script>
+    <script type="text/javascript" src="controller/add-complaint.js"></script>
+    <script type="text/javascript" src="controller/detail-complaint.js"></script>
+    <script type="text/javascript" src="controller/detail-img.js"></script>
+    <script type="text/javascript" src="controller/detail-design-folder.js"></script>
+    <script type="text/javascript" src="controller/img-comment.js"></script>
+    <script type="text/javascript" src="controller/project.js"></script>
+    <script type="text/javascript" src="controller/profile.js"></script>
+    <script type="text/javascript" src="controller/detail-task.js"></script>
+
+    <script type="text/javascript" src="controller/panel-project-update.js"></script>
+
+
+
+
+
+
+</body>
+
+<!-- popover project -->
+
+<div class="popover popover-detail-project" id="popover_in_project">
+  <div class="popover-inner">
+    <div class="list-block">
+      <ul>
+        <li><a href="pages/joint-project.html" class="item-link list-button">Join</a></li>
+        <li><a href="pages/report-project.html" class="item-link list-button">Report</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+</html>
