@@ -22,7 +22,7 @@ myApp.onPageInit('all-project', function (page) {
 				}
 			}
 		}
-	});	
+	});
 
 	var id_last_all_pro=0;
 
@@ -31,7 +31,7 @@ myApp.onPageInit('all-project', function (page) {
 		$.post(server+'/all-project/ex',{auth:auth,data:{lastId:id_last_all_pro}},function(data){
 			if(data.signal_err==undefined){
 				if(data.length>0){
-	
+
 					for(var i in data){
 						var rdom =dom;
 						rdom=rdom.replace('[#project.title]',data[i].title);
@@ -39,20 +39,23 @@ myApp.onPageInit('all-project', function (page) {
 						rdom=rdom.replace('[#projectId]',data[i].id);
 
 						id_last_all_pro=data[i].id;
-						
+
 						$($$(page.container).find('#my-project-looping-ex')).prepend(rdom)
 					}
 				}
-	
+
 			}
-	
-		});	
+			// block load destroy
+			$$(page.container).find('.block-load').css('display','none');
+
+
+		});
 	}
 
 	loadProjectAll();
 	var lastScrollTop = 0;
 
-	
+
 
 // 	$($$(page.container).find('.page-content')).scroll(function(){
 // 		console.log(3)

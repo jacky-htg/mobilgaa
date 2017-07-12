@@ -7,13 +7,13 @@ myApp.onPageInit('panel-project-update', function (page) {
 	checkToken(page);
 	var auth=getTokenId(page);
 	var query=page.query;
-	
+
 	var data_nav=dataNav();
 	data_nav.last_page.home=page.url;
 	var projectId=data_nav.home.project.id;
 	dataNav(data_nav);
 
-	
+
 
 
 	$.post(server+'/project-update',{auth:auth,data:{projectId:projectId}},function(data){
@@ -33,6 +33,9 @@ myApp.onPageInit('panel-project-update', function (page) {
 
 				}
 			}
+			// block load destroy
+			$$(page.container).find('.block-load').css('display','none');
+
 		}
 	})
 

@@ -7,7 +7,7 @@ myApp.onPageInit('detail-img', function (page) {
 	var projectId;
 	var pictureId;
 	// console.log('projectVocus = '+projectId_for_left_panel);
-	
+
 	// update data nav
 	var data_nav=dataNav();
 	data_nav.last_page.home=page.url;
@@ -23,8 +23,8 @@ myApp.onPageInit('detail-img', function (page) {
 	data_nav=dataNav();
 	console.log(data_nav);
 
-	
-	
+
+
 
 	var auth=getTokenId();
 	var count_like=0;
@@ -42,14 +42,14 @@ myApp.onPageInit('detail-img', function (page) {
 			var link_next=$($$(page.container).find('.link-next')).attr('href');
 			$($$(page.container).find('.link-next')).attr('href',link_next+'picId='+data.id+'&');
 
-			
+
 			$($$(page.container).find('#img')).attr('src',domain+data.urlImg);
 			var like=data.project_img_likes;
 			count_like=like.length;
 			var role_in_project='';
 			$$(page.container).find('#creator_pic').html(data.user.userName+role_in_project);
 			$$(page.container).find('#caption').html(data.description);
-			
+
 
 			$$(page.container).find('#count_like').html('<i class="material-icons icon">favorite</i> '+count_like);
 			var comment=data.project_img_comments;
@@ -60,12 +60,15 @@ myApp.onPageInit('detail-img', function (page) {
 				$$(page.container).find('#buttonLike').html('<i class="material-icons icon icon-boder" style="color:red;   -webkit-text-fill-color:red;">favorite</i>')
 			}else{
 				$$(page.container).find('#buttonLike').html('<i class="material-icons icon icon-boder">favorite</i>');
-				
+
 			}
 
 
 
 		}
+		// block load destroy
+		$$(page.container).find('.block-load').css('display','none');
+
 	})
 
 
@@ -80,8 +83,8 @@ myApp.onPageInit('detail-img', function (page) {
 		})
 
 	})
-		
-	
+
+
 
 
 });

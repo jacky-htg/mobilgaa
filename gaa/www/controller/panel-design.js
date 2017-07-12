@@ -29,10 +29,13 @@ myApp.onPageInit('panel-design', function (page) {
 
 
 
-					
+
 					$$(page.container).find('#folder-design-looping').prepend(rdom);
 				}
 			}
+			// block load destroy
+			$$(page.container).find('.block-load').css('display','none');
+
 		}
 	})
 

@@ -1,10 +1,10 @@
 myApp.onPageInit('comment', function (page) {
 
-	
+
 	checkToken(page);
 	var auth=getTokenId(page);
 	var query=page.query;
-	var pictureId;	
+	var pictureId;
 	var projectId;
 	// var projectId=projectVocus(query);
 
@@ -37,19 +37,19 @@ myApp.onPageInit('comment', function (page) {
 
 
 
-	
+
 	$.post(server+'/picture/',{auth:auth,data:{projectId:projectId,picId:pictureId}},function(data){
-		
+
 
 		if(data.signal_err==undefined){
-				
+
 			var data=data.data;
 			console.log(data);
-			
+
 
 			var dom_comment=$$(page.container).find('#looping-comment').html();
 			$$(page.container).find('#looping-comment').html('');
-			
+
 			for(var i in data.project_img_comments){
 				var rdom=dom_comment;
 				rdom=rdom.replace('[#detail-img.comment.userName#role]',data.project_img_comments[i].user.userName);
@@ -59,5 +59,8 @@ myApp.onPageInit('comment', function (page) {
 			}
 		}
 	});
+	// block load destroy
+	$$(page.container).find('.block-load').css('display','none');
+
 
 });

@@ -5,7 +5,7 @@ myApp.onPageInit('panel-budget', function (page) {
 	var query=page.query;
 	checkToken(page);
 	var auth=getTokenId(page);
-	
+
 	var dom_sub=$(page.container).find('#subtask-looping-').html();
 	$(page.container).find('#subtask-looping-').html('');
 
@@ -38,11 +38,11 @@ myApp.onPageInit('panel-budget', function (page) {
 							var rdom2=dom_sub;
 							total=total+data2[ii].budget;
 							rdom2=rdom2.replace('[#subtask.title]',data2[ii].title);
-							
+
 							rdom2=rdom2.replace('[#subtask.budget]','Rp. '+buildMonay(data2[ii].budget));
 
 							$(page.container).find('#subtask-looping-'+data[i].id).append(rdom2);
-									 
+
 
 						}
 					}
@@ -56,6 +56,8 @@ myApp.onPageInit('panel-budget', function (page) {
 
 				$(page.container).find('#total-all').html('Rp. '+ buildMonay(totalbudget));
 			}
+			// block load destroy
+			$$(page.container).find('.block-load').css('display','none');
 		}
 	})
 

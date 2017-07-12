@@ -19,6 +19,9 @@ myApp.onPageInit('panel-people', function (page) {
 				$$(page.container).find('#people-on-project-looping').append(rdom);
 
 			}
+			// block load destroy
+			$$(page.container).find('.block-load').css('display','none');
+
 		}
 	})
 

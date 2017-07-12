@@ -15,7 +15,7 @@ myApp.onPageInit('detail-task', function (page) {
 	$($$(page.container).find('#looping-subtask')).html('');
 
 	$.post(server+'/task/detail',{auth:auth,data:{projectId:data_nav.home.project.id,taskId:query.taskId}},function(data){
-		
+
 		var data=data.project_tasks[0].project_sub_tasks;
 
 		for(var i in data){
@@ -37,12 +37,11 @@ myApp.onPageInit('detail-task', function (page) {
 
 
 		}
-
-
+		// block load destroy
+		$$(page.container).find('.block-load').css('display','none');
 
 	});
 
-	
+
 
 });
-

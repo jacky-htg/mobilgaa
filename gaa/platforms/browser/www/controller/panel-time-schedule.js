@@ -8,16 +8,13 @@ myApp.onPageInit('panel-time-schedule', function (page) {
 	var data_nav=dataNav();
 	data_nav.last_page.home=page.url;
 	var projectId=data_nav.home.project.id;
-	dataNav(data_nav);	
+	dataNav(data_nav);
 
 	var ex_data;
 	var jobDone=0
-<<<<<<< HEAD
-=======
 	var width_list=$($$(page.container).find('#list-month')).width();
 	console.log(width_list);
 	$$(page.container).find('.schedul .month').css('width',((width_list/12)-2)+'px');
->>>>>>> 0b9bb1dce58140a615ed676d7d984aa65c2e1691
 
 	$.post(server+"/time-schedule/",{auth:auth,data:{projectId:projectId}},function(data){
 		if(data.signal_err==undefined){
@@ -30,24 +27,19 @@ myApp.onPageInit('panel-time-schedule', function (page) {
 					// console.log(data);
 					if(data.length>0){
 						$($$(page.container).find('#total')).html('Total : '+data.length);
-						
+
 						for(var i in data){
 							var presenting=0;
-<<<<<<< HEAD
-							var width_list=$($$(page.container).find('#list-month')).width()
-							$($$(page.container).find('.schedul .month')).css('width',((width_list/12)-2.5)+'px');
-=======
 							// var width_list=$($$(page.container).find('#list-month')).width();
 							// console.log(width_list);
 							// $$(page.container).find('.schedul .month').css('width',((width_list/12))+'px');
->>>>>>> 0b9bb1dce58140a615ed676d7d984aa65c2e1691
 							var spanPerMonth=$($$(page.container).find('.schedul .month')).width();
 							var spanDay=spanPerMonth/32;
 							var spanYear=$($$(page.container).find('.list-month')).width();
 
 							var date,date2,day,moth,year,day2,moth2,year2,padding,width;
 
-							
+
 
 							if(data[i].project_sub_tasks.length>0){
 								var data_sub=data[i].project_sub_tasks
@@ -72,7 +64,7 @@ myApp.onPageInit('panel-time-schedule', function (page) {
 							date=data[i].startDate+'';
 							date=date.split('T')[0];
 							date=date.split('-');
-							
+
 							date2=data[i].endDate+'';
 							console.log(date2 + ' end');
 							date2=date2.split('T')[0];
@@ -81,11 +73,7 @@ myApp.onPageInit('panel-time-schedule', function (page) {
 
 							if(parseInt(date[0])==yearslock){
 								day=parseInt(date[2])*spanDay;
-<<<<<<< HEAD
-								padding=(parseInt(date[1])-1)*spanPerMonth+day;
-=======
 								padding=(parseInt(date[1])-1)*(spanPerMonth+2)+day;
->>>>>>> 0b9bb1dce58140a615ed676d7d984aa65c2e1691
 								if(parseInt(date2[0])==yearslock){
 									day2=parseInt(date2[2])*spanDay;
 									width=(((parseInt(date2[1])-1)*spanPerMonth)+day2)-padding;
@@ -107,7 +95,7 @@ myApp.onPageInit('panel-time-schedule', function (page) {
 								}
 
 							}
-										
+
 							 var domtaskviewblock='<a href="pages/home/task-detail.html?taskId='+data[i].id+'" class="col-100  task-block" style="margin-top:5px; padding-bottom:10px; border-bottom:1px solid #222;">'+
 			                      ' <div style="margin-left:'+padding+'px;width:'+((spanPerMonth*12)-padding)+'px;">'+
 			                          '<span class="presentation-task">'+presenting+'%</span>'+
@@ -123,7 +111,7 @@ myApp.onPageInit('panel-time-schedule', function (page) {
 
 			                  $($$(page.container).find('.view-task-block')).append(domtaskviewblock);
 						}
-				
+
 					}
 					$($$(page.container).find('#years_value')).html(yearslock);
 					$($$(page.container).find('#on_pro')).html('On Progrest : '+(data.length-jobDone));
@@ -159,5 +147,3 @@ myApp.onPageInit('panel-time-schedule', function (page) {
 	})
 
 });
-
-

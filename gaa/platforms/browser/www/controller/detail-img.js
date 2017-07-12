@@ -7,16 +7,12 @@ myApp.onPageInit('detail-img', function (page) {
 	var projectId;
 	var pictureId;
 	// console.log('projectVocus = '+projectId_for_left_panel);
-	
+
 	// update data nav
 	var data_nav=dataNav();
 	data_nav.last_page.home=page.url;
 	projectId=data_nav.home.project.id;
 
-<<<<<<< HEAD
-	console.log(page.url);
-=======
->>>>>>> 0b9bb1dce58140a615ed676d7d984aa65c2e1691
 	if(query.pic!=undefined){
 		data_nav.home.project.pictureId=query.pic;
 		pictureId=query.pic;
@@ -25,13 +21,10 @@ myApp.onPageInit('detail-img', function (page) {
 	}
 	dataNav(data_nav);
 	data_nav=dataNav();
-<<<<<<< HEAD
-=======
 	console.log(data_nav);
->>>>>>> 0b9bb1dce58140a615ed676d7d984aa65c2e1691
 
-	
-	
+
+
 
 	var auth=getTokenId();
 	var count_like=0;
@@ -41,27 +34,22 @@ myApp.onPageInit('detail-img', function (page) {
 	$$(page.container).find('#looping-comment').html('');
 
 	$.post(server+'/picture/',{auth:auth,data:{projectId:projectId,picId:pictureId}},function(data){
-<<<<<<< HEAD
-		
-
-=======
 			console.log(data);
 			console.log({projectId:projectId,picId:pictureId});
->>>>>>> 0b9bb1dce58140a615ed676d7d984aa65c2e1691
 		if(data.signal_err==undefined){
 			var meLike=data.meLike;
 			var data=data.data;
 			var link_next=$($$(page.container).find('.link-next')).attr('href');
 			$($$(page.container).find('.link-next')).attr('href',link_next+'picId='+data.id+'&');
 
-			
+
 			$($$(page.container).find('#img')).attr('src',domain+data.urlImg);
 			var like=data.project_img_likes;
 			count_like=like.length;
 			var role_in_project='';
 			$$(page.container).find('#creator_pic').html(data.user.userName+role_in_project);
 			$$(page.container).find('#caption').html(data.description);
-			
+
 
 			$$(page.container).find('#count_like').html('<i class="material-icons icon">favorite</i> '+count_like);
 			var comment=data.project_img_comments;
@@ -72,7 +60,7 @@ myApp.onPageInit('detail-img', function (page) {
 				$$(page.container).find('#buttonLike').html('<i class="material-icons icon icon-boder" style="color:red;   -webkit-text-fill-color:red;">favorite</i>')
 			}else{
 				$$(page.container).find('#buttonLike').html('<i class="material-icons icon icon-boder">favorite</i>');
-				
+
 			}
 
 
@@ -92,8 +80,8 @@ myApp.onPageInit('detail-img', function (page) {
 		})
 
 	})
-		
-	
+
+
 
 
 });

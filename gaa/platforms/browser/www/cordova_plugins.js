@@ -11343,7 +11343,6 @@ module.exports = [
         "merges": [
             "window.FileSystem"
         ]
-<<<<<<< HEAD
     },
     {
         "file": "plugins/es6-promise-plugin/www/promise.js",
@@ -11358,11 +11357,9 @@ module.exports = [
         "clobbers": [
             "window.plugins.socialsharing"
         ]
-=======
->>>>>>> 0b9bb1dce58140a615ed676d7d984aa65c2e1691
     }
 ];
-module.exports.metadata = 
+module.exports.metadata =
 // TOP OF METADATA
 {
     "cordova-plugin-battery-status": "1.1.2",
@@ -11385,13 +11382,9 @@ module.exports.metadata =
     "cordova-plugin-vibration": "2.1.5",
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-compat": "1.1.0",
-<<<<<<< HEAD
     "cordova-plugin-file": "4.3.3",
     "es6-promise-plugin": "4.1.0",
     "cordova-plugin-x-socialsharing": "5.1.8"
-=======
-    "cordova-plugin-file": "4.3.3"
->>>>>>> 0b9bb1dce58140a615ed676d7d984aa65c2e1691
 }
 // BOTTOM OF METADATA
 });

@@ -5,7 +5,7 @@ myApp.onPageInit('detail-project', function (page) {
 	var auth=getTokenId(page);
 	var query=page.query;
 	var projectId;
-		
+
 	// update_navigasi_data
 	var data_nav=dataNav();
 	data_nav.last_page.home=page.url;
@@ -28,7 +28,7 @@ myApp.onPageInit('detail-project', function (page) {
 		projectId=projectId_for_left_panel;
 	}
 	else if(projectId_for_left_panel!=0){
-		projectId=projectId_for_left_panel;		
+		projectId=projectId_for_left_panel;
 	}
 	else{
 		projectId=0;
@@ -36,14 +36,14 @@ myApp.onPageInit('detail-project', function (page) {
 	}
 
 
-	
+
 
 	var dom_pic=$$(page.container).find('#detail-project-pic-row-1').html();
 	$$(page.container).find('#detail-project-pic-row-1').html('');
 
 	$.post(server+'/project/',{auth:auth,data:{projectId:projectId,picId:query.pic}},function(data){
 			if(data.signal_err==undefined){
-					
+
 				console.log(data);
 				var role=data.role;
 				if(role!=null){
@@ -61,9 +61,9 @@ myApp.onPageInit('detail-project', function (page) {
 				$$(page.container).find('#address-project').html(data.address);
 
 
-				// block load distroy
+				// block load destroy
 				$$(page.container).find('.block-load').css('display','none');
-				
+
 				if(data.project_imgs.length>0){
 					var pic=data.project_imgs;
 					var index_pic=1;
