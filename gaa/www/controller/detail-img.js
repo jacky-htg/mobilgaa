@@ -13,7 +13,6 @@ myApp.onPageInit('detail-img', function (page) {
 	data_nav.last_page.home=page.url;
 	projectId=data_nav.home.project.id;
 
-	console.log(page.url);
 	if(query.pic!=undefined){
 		data_nav.home.project.pictureId=query.pic;
 		pictureId=query.pic;
@@ -22,6 +21,7 @@ myApp.onPageInit('detail-img', function (page) {
 	}
 	dataNav(data_nav);
 	data_nav=dataNav();
+	console.log(data_nav);
 
 	
 	
@@ -34,8 +34,8 @@ myApp.onPageInit('detail-img', function (page) {
 	$$(page.container).find('#looping-comment').html('');
 
 	$.post(server+'/picture/',{auth:auth,data:{projectId:projectId,picId:pictureId}},function(data){
-		
-
+			console.log(data);
+			console.log({projectId:projectId,picId:pictureId});
 		if(data.signal_err==undefined){
 			var meLike=data.meLike;
 			var data=data.data;

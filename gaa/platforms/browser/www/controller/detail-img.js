@@ -13,7 +13,10 @@ myApp.onPageInit('detail-img', function (page) {
 	data_nav.last_page.home=page.url;
 	projectId=data_nav.home.project.id;
 
+<<<<<<< HEAD
 	console.log(page.url);
+=======
+>>>>>>> 0b9bb1dce58140a615ed676d7d984aa65c2e1691
 	if(query.pic!=undefined){
 		data_nav.home.project.pictureId=query.pic;
 		pictureId=query.pic;
@@ -22,6 +25,10 @@ myApp.onPageInit('detail-img', function (page) {
 	}
 	dataNav(data_nav);
 	data_nav=dataNav();
+<<<<<<< HEAD
+=======
+	console.log(data_nav);
+>>>>>>> 0b9bb1dce58140a615ed676d7d984aa65c2e1691
 
 	
 	
@@ -34,8 +41,13 @@ myApp.onPageInit('detail-img', function (page) {
 	$$(page.container).find('#looping-comment').html('');
 
 	$.post(server+'/picture/',{auth:auth,data:{projectId:projectId,picId:pictureId}},function(data){
+<<<<<<< HEAD
 		
 
+=======
+			console.log(data);
+			console.log({projectId:projectId,picId:pictureId});
+>>>>>>> 0b9bb1dce58140a615ed676d7d984aa65c2e1691
 		if(data.signal_err==undefined){
 			var meLike=data.meLike;
 			var data=data.data;

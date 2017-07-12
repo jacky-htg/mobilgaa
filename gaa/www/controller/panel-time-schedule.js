@@ -12,6 +12,9 @@ myApp.onPageInit('panel-time-schedule', function (page) {
 
 	var ex_data;
 	var jobDone=0
+	var width_list=$($$(page.container).find('#list-month')).width();
+	console.log(width_list);
+	$$(page.container).find('.schedul .month').css('width',((width_list/12)-2)+'px');
 
 	$.post(server+"/time-schedule/",{auth:auth,data:{projectId:projectId}},function(data){
 		if(data.signal_err==undefined){
@@ -27,8 +30,9 @@ myApp.onPageInit('panel-time-schedule', function (page) {
 						
 						for(var i in data){
 							var presenting=0;
-							var width_list=$($$(page.container).find('#list-month')).width()
-							$($$(page.container).find('.schedul .month')).css('width',((width_list/12)-2.5)+'px');
+							// var width_list=$($$(page.container).find('#list-month')).width();
+							// console.log(width_list);
+							// $$(page.container).find('.schedul .month').css('width',((width_list/12))+'px');
 							var spanPerMonth=$($$(page.container).find('.schedul .month')).width();
 							var spanDay=spanPerMonth/32;
 							var spanYear=$($$(page.container).find('.list-month')).width();
@@ -69,7 +73,7 @@ myApp.onPageInit('panel-time-schedule', function (page) {
 
 							if(parseInt(date[0])==yearslock){
 								day=parseInt(date[2])*spanDay;
-								padding=(parseInt(date[1])-1)*spanPerMonth+day;
+								padding=(parseInt(date[1])-1)*(spanPerMonth+2)+day;
 								if(parseInt(date2[0])==yearslock){
 									day2=parseInt(date2[2])*spanDay;
 									width=(((parseInt(date2[1])-1)*spanPerMonth)+day2)-padding;
