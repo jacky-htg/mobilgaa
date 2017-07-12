@@ -63,6 +63,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.gaa.empatlima"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.gaa.empatlima"
         }
     },
     "dependent_plugins": {
@@ -70,6 +73,9 @@
             "PACKAGE_NAME": "com.gaa.empatlima"
         },
         "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.gaa.empatlima"
+        },
+        "es6-promise-plugin": {
             "PACKAGE_NAME": "com.gaa.empatlima"
         }
     }

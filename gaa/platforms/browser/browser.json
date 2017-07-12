@@ -84,6 +84,12 @@
         },
         "cordova-plugin-file": {
             "PACKAGE_NAME": "com.gaa.empatlima"
+        },
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "com.gaa.empatlima"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.gaa.empatlima"
         }
     },
     "dependent_plugins": {},
@@ -11431,6 +11437,20 @@
             "merges": [
                 "window.FileSystem"
             ]
+        },
+        {
+            "file": "plugins/es6-promise-plugin/www/promise.js",
+            "id": "es6-promise-plugin.Promise",
+            "pluginId": "es6-promise-plugin",
+            "runs": true
+        },
+        {
+            "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+            "id": "cordova-plugin-x-socialsharing.SocialSharing",
+            "pluginId": "cordova-plugin-x-socialsharing",
+            "clobbers": [
+                "window.plugins.socialsharing"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -11454,6 +11474,8 @@
         "cordova-plugin-vibration": "2.1.5",
         "cordova-plugin-whitelist": "1.2.2",
         "cordova-plugin-compat": "1.1.0",
-        "cordova-plugin-file": "4.3.3"
+        "cordova-plugin-file": "4.3.3",
+        "es6-promise-plugin": "4.1.0",
+        "cordova-plugin-x-socialsharing": "5.1.8"
     }
 }
