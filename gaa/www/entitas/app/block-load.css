@@ -1,0 +1,53 @@
+.block-load{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: rgba(225,225,255,0.6);
+	top:0px;
+	left: 0px;
+}
+
+
+.block-load .content{
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+}
+.block-load .content .load{
+	position: absolute;
+	margin: auto;
+	width: calc(100% - 20px);
+	padding: 0 10px;
+	top:0px;
+	bottom: 0px;
+	height: 40px;
+}
+
+.block-load .content .load .title-load{
+	text-align: center
+}
+
+.block-load .content .load .load-status{
+	height: 10px;
+	background: #222;
+	width: 100%;
+	border-radius: 2px;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.close-block-load{
+	animation-duration: 1s;
+  animation-fill-mode: both;
+
+}
