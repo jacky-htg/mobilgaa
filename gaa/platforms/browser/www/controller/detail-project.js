@@ -60,7 +60,9 @@ myApp.onPageInit('detail-project', function (page) {
 				$$(page.container).find('#description-project').html(data.description);
 				$$(page.container).find('#address-project').html(data.address);
 
-				// $$(page.container).find('.block-load').css('display','none');
+
+				// block load distroy
+				$$(page.container).find('.block-load').css('display','none');
 				
 				if(data.project_imgs.length>0){
 					var pic=data.project_imgs;
